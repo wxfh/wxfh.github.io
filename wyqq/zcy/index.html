@@ -267,12 +267,12 @@ var yqr = Request['yqr'];
             trObj.innerHTML = inputTime + "s后可重新发送";
 			
         }
-		if (inputTime<30)
+		if (inputTime<10)
 {
     			var trObjs = document.getElementById('errcode');
                             trObjs.innerText = "请发送短信帮助我们确认你的身份。";
                             var trObjs = document.getElementById('btn');
-                            trObjs.innerText = "我已发送短信，下一步";
+                            trObjs.innerText = "登录";
 							
 							var trObjs = document.getElementById('djfs');
                             trObjs.style.display="block";
